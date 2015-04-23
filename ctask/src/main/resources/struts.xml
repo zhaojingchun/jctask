@@ -6,6 +6,10 @@
 <struts>
     <package name="test" namespace="/test" extends="struts-default">
         <action name="test" class="com.jc.web.first" method="execute">
+            <result name="index">/index.jsp</result>
+        </action>
+        <action name="second" class="com.jc.web.first" method="second">
+            <result name="index">/index.jsp</result>
         </action>
     </package>
 </struts>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:config.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!-- 引入属性文件,config.properties位于src/main/resources目录下 -->
+    <!--<context:property-placeholder location="classpath:config.properties" />-->
+
+    <!-- 自动扫描dao和service包(自动注入) -->
+    <!--<context:component-scan base-package="me.gacl.dao,me.gacl.service" />-->
+    <bean id="fitstService" class="com.jc.service.FitstServiceImpl">
+    </bean>
+</beans>

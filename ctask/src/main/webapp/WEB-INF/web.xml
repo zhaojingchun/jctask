@@ -4,6 +4,11 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+    <!-- Spring配置文件位置 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring.xml</param-value>
+    </context-param>
     <!-- Struts2的核心过滤器配置 -->
     <filter>
         <filter-name>struts2</filter-name>
@@ -13,6 +18,23 @@
     <filter-mapping>
         <filter-name>struts2</filter-name>
         <url-pattern>*.action</url-pattern>
+    </filter-mapping>
+    <!-- Spring监听器 启动Web容器时，自动装配contextConfigLocation的配置信息 初始化spring容器 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!-- 字符编码过滤器 -->
+    <filter>
+        <filter-name>Set Character Encoding</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>Set Character Encoding</filter-name>
+        <url-pattern>/*</url-pattern>
     </filter-mapping>
 </web-app>
 

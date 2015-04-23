@@ -14,6 +14,7 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+      <!--sturs 开始 -->
       <dependency>
           <groupId>org.apache.struts</groupId>
           <artifactId>struts2-core</artifactId>
@@ -29,8 +30,64 @@
           <artifactId>javassist</artifactId>
           <version>3.8.0.GA</version>
       </dependency>
+      <!-- struts 结束 -->
+      <!-- spring 结束 -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-core</artifactId>
+          <version>3.1.2.RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-context</artifactId>
+          <version>3.1.2.RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-jdbc</artifactId>
+          <version>3.1.2.RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-beans</artifactId>
+          <version>3.1.2.RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-web</artifactId>
+          <version>3.1.2.RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-expression</artifactId>
+          <version>3.1.2.RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-orm</artifactId>
+          <version>3.1.2.RELEASE</version>
+      </dependency>
+      <!-- end spring 核心依赖包 -->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+          <version>2.5</version>
+          <scope>provided</scope>
+      </dependency>
   </dependencies>
   <build>
     <finalName>ctask</finalName>
   </build>
+  <profiles>
+    <profile>
+        <!-- 测试环境的profile -->
+        <id>tuan-development</id>
+        <properties>
+            <tuan.read.jdbc.driver>com.mysql.jdbc.Driver</tuan.read.jdbc.driver>
+            <tuan.read.jdbc.url>jdbc:mysql:loadbalance://xxxxxxxxx/tuan?autoReconnect=true<![CDATA[&amp;]]>useUnicode=true<![CDATA[&amp;]]>characterEncoding=UTF8<![CDATA[&amp;]]>roundRobinLoadBalance=true<![CDATA[&amp;]]>loadBalanceStrategy=random</tuan.read.jdbc.url>
+            <tuan.read.jdbc.username>xxxxx</tuan.read.jdbc.username>
+            <tuan.read.jdbc.password>xxxxx</tuan.read.jdbc.password>
+        </properties>
+    </profile>
+  </profiles>
 </project>
