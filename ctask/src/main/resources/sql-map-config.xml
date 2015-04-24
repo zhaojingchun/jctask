@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!DOCTYPE sqlMapConfig  PUBLIC "-//iBATIS.com//DTD SQL Map
+Config 2.0/" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+    <settings cacheModelsEnabled="true"
+              enhancementEnabled="true"
+              lazyLoadingEnabled="false"
+              errorTracingEnabled="true"
+              maxRequests="32"
+              maxSessions="10" maxTransactions="5" useStatementNamespaces="true"/>
 
-</beans>
+    <sqlMap resource="First.xml"/>
+</sqlMapConfig>
+

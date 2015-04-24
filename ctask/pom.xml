@@ -25,7 +25,13 @@
           <artifactId>log4j</artifactId>
           <version>1.2.14</version>
       </dependency>
+      <!--<dependency>-->
+          <!--<groupId>org.springframework</groupId>-->
+          <!--<artifactId>spring</artifactId>-->
+          <!--<version>2.5.6</version>-->
+      <!--</dependency>-->
       <dependency>
+          <!--编辑和创建Java字节码的类库-->
           <groupId>javassist</groupId>
           <artifactId>javassist</artifactId>
           <version>3.8.0.GA</version>
@@ -68,15 +74,69 @@
           <version>3.1.2.RELEASE</version>
       </dependency>
       <!-- end spring 核心依赖包 -->
+      <!-- stuts spring 整合 -->
+      <dependency>
+          <groupId>org.apache.struts</groupId>
+          <artifactId>struts2-spring-plugin</artifactId>
+          <version>2.3.15.1</version>
+          <!--排除依赖-->
+          <!--<exclusions>-->
+              <!--<exclusion>-->
+                  <!--<artifactId>spring-beans</artifactId>-->
+                  <!--<groupId>org.springframework</groupId>-->
+              <!--</exclusion>-->
+              <!--<exclusion>-->
+                  <!--<artifactId>spring-core</artifactId>-->
+                  <!--<groupId>org.springframework</groupId>-->
+              <!--</exclusion>-->
+              <!--<exclusion>-->
+                  <!--<artifactId>spring-context</artifactId>-->
+                  <!--<groupId>org.springframework</groupId>-->
+              <!--</exclusion>-->
+              <!--<exclusion>-->
+                  <!--<artifactId>spring-web</artifactId>-->
+                  <!--<groupId>org.springframework</groupId>-->
+              <!--</exclusion>-->
+          <!--</exclusions>-->
+      </dependency>
+      <!--  stuts spring 整合 -->
       <dependency>
           <groupId>javax.servlet</groupId>
           <artifactId>servlet-api</artifactId>
           <version>2.5</version>
           <scope>provided</scope>
       </dependency>
+
+      <!-- ibatis 整合-->
+      <dependency>
+          <groupId>org.apache.ibatis</groupId>
+          <artifactId>ibatis-sqlmap</artifactId>
+          <version>2.3.4.726</version>
+      </dependency>
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>5.1.23</version> <!--5.1.5-->
+      </dependency>
+      <dependency>
+          <groupId>commons-dbcp</groupId>
+          <artifactId>commons-dbcp</artifactId>
+          <version>1.4</version>
+      </dependency>
   </dependencies>
   <build>
     <finalName>ctask</finalName>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>1.5</source>
+                  <target>1.5</target>
+                  <encoding>utf-8</encoding>
+              </configuration>
+          </plugin>
+      </plugins>
   </build>
   <profiles>
     <profile>
@@ -84,7 +144,7 @@
         <id>tuan-development</id>
         <properties>
             <tuan.read.jdbc.driver>com.mysql.jdbc.Driver</tuan.read.jdbc.driver>
-            <tuan.read.jdbc.url>jdbc:mysql:loadbalance://xxxxxxxxx/tuan?autoReconnect=true<![CDATA[&amp;]]>useUnicode=true<![CDATA[&amp;]]>characterEncoding=UTF8<![CDATA[&amp;]]>roundRobinLoadBalance=true<![CDATA[&amp;]]>loadBalanceStrategy=random</tuan.read.jdbc.url>
+            <tuan.read.jdbc.url>jdbc:mysql://xxx/xxx?autoReconnect=true<![CDATA[&amp;]]>useUnicode=true<![CDATA[&amp;]]>characterEncoding=utf8</tuan.read.jdbc.url>
             <tuan.read.jdbc.username>xxxxx</tuan.read.jdbc.username>
             <tuan.read.jdbc.password>xxxxx</tuan.read.jdbc.password>
         </properties>

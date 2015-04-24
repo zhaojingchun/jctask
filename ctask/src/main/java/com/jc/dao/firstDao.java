@@ -1,5 +1,9 @@
 package com.jc.dao;
 
+import com.jc.domain.Team;
+
+import java.util.Map;
+
 /**
  * Created with IntelliJ IDEA.
  * User: zhaojingchun
@@ -7,5 +11,6 @@ package com.jc.dao;
  * Time: 下午6:52
  * To change this template use File | Settings | File Templates.
  */
-public class firstDao {
+public interface FirstDao {
+    public Team getTeamByid(Map map);
 }
