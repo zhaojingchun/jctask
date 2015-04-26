@@ -17,6 +17,7 @@
     <bean id="fitstService" class="com.jc.service.FitstServiceImpl">
 
     </bean>
+    <bean id="httpClientUtil" class="com.jc.common.HttpClientUtil"/>
     <import resource="spring-ibatis.xml" />
     <import resource="spring-dao.xml" />
 

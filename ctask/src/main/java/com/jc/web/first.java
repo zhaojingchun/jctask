@@ -38,10 +38,10 @@ public class first  extends ActionSupport{
             Logger.getLogger("test1.test2").debug("test2");
             fitstService.helloWord();
             System.out.println("aaaaaaaaaa");
-            Map<String ,Object> param = new HashMap<String,Object>();
-            param.put("id",999) ;
-            Team team = firstDao.getTeamByid(param);
-            System.out.print(team.toString());
+//            Map<String ,Object> param = new HashMap<String,Object>();
+//            param.put("id",999) ;
+//            Team team = firstDao.getTeamByid(param);
+//            System.out.print(team.toString());
         }catch (Exception e){
             Logger.getLogger("test1.test2").error(e.getMessage(),e);
         }
