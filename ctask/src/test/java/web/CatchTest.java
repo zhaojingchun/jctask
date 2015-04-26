@@ -1,6 +1,7 @@
 package web;
 
 import com.jc.common.HttpClientUtil;
+import com.jc.dao.FirstDao;
 import com.jc.web.Catch;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -18,6 +19,8 @@ public class CatchTest {
     private Catch catch1;
     @Autowired
     private HttpClientUtil httpClientUtil;
+    @Autowired
+    private FirstDao firstDao;
     @Test
     public void createFileTest(){
         httpClientUtil.printStr();
@@ -41,5 +44,13 @@ public class CatchTest {
 
     public void setHttpClientUtil(HttpClientUtil httpClientUtil) {
         this.httpClientUtil = httpClientUtil;
+    }
+
+    public FirstDao getFirstDao() {
+        return firstDao;
+    }
+
+    public void setFirstDao(FirstDao firstDao) {
+        this.firstDao = firstDao;
     }
 }

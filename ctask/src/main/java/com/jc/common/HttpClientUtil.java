@@ -11,6 +11,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.List;
 /**
  * Created by jingchun on 2015/4/25.
  */
+@Component
 public class HttpClientUtil {
     private Logger log = Logger.getLogger(HttpClientUtil.class);
     public String  post (String url) {
