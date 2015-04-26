@@ -103,5 +103,9 @@ public class HttpClientUtil {
         return null;
     }
 
+    public void printStr(){
+        System.out.println("+++++++++++++++++++++++++++++++++++++++");
+    }
+
 
 }

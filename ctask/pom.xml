@@ -9,10 +9,10 @@
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.8.2</version>
+        <scope>test</scope>
     </dependency>
       <!--sturs 开始 -->
       <dependency>
@@ -71,6 +71,11 @@
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-orm</artifactId>
+          <version>3.1.2.RELEASE</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-test</artifactId>
           <version>3.1.2.RELEASE</version>
       </dependency>
       <!-- end spring 核心依赖包 -->
