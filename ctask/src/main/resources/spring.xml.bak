@@ -16,8 +16,16 @@
     <!--<context:property-placeholder location="classpath:config.properties" />-->
 
     <!--<bean id="fitstService" class="com.jc.service.FitstServiceImpl">-->
+
+<<<<<<< HEAD
+    </bean>
+    <bean id="httpClientUtil" class="com.jc.common.HttpClientUtil">
+        <property name="charSet" value="${com.jc.cjtask.httpClientUtil.charSet}"/>
+    </bean>
+=======
     <!--</bean>-->
     <!--<bean id="httpClientUtil" class="com.jc.common.HttpClientUtil"/>-->
+>>>>>>> 82b94dac2b6af2f8d120c3060290f1a3be5d8663
     <import resource="spring-ibatis.xml" />
     <import resource="spring-dao.xml" />
 

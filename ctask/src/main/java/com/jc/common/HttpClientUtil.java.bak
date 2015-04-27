@@ -102,12 +102,16 @@ public class HttpClientUtil {
         return null;
     }
 
+<<<<<<< HEAD
     public String getCharSet() {
         return charSet;
     }
+=======
     public void printStr(){
         System.out.println("+++++++++++++++++++++++++++++++++++++++");
     }
+
+>>>>>>> 82b94dac2b6af2f8d120c3060290f1a3be5d8663
 
     public void setCharSet(String charSet) {
         this.charSet = charSet;

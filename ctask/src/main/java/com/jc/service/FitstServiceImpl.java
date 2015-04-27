@@ -1,5 +1,7 @@
 package com.jc.service;
 
+import org.springframework.stereotype.Service;
+
 /**
  * Created with IntelliJ IDEA.
  * User: zhaojingchun
@@ -7,6 +9,7 @@ package com.jc.service;
  * Time: 下午4:03
  * To change this template use File | Settings | File Templates.
  */
+@Service("fitstService")
 public class FitstServiceImpl {
 
     public void helloWord(){
