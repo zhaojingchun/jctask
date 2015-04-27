@@ -16,7 +16,7 @@ import java.util.Map;
 public class FirstDaoImpl extends SqlMapClientTemplate implements FirstDao {
     public Team getTeamByid(Map map){
 //           Team t =  (Team)queryForObject("First.getTeamByid",map);
-       return (Team) queryForObject("First.getTeamById",123l);
+       return (Team) queryForObject("First.getTeamById",map);
 
 //        return null;
     }

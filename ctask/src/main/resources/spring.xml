@@ -17,7 +17,9 @@
     <bean id="fitstService" class="com.jc.service.FitstServiceImpl">
 
     </bean>
-    <bean id="httpClientUtil" class="com.jc.common.HttpClientUtil"/>
+    <bean id="httpClientUtil" class="com.jc.common.HttpClientUtil">
+        <property name="charSet" value="${com.jc.cjtask.httpClientUtil.charSet}"/>
+    </bean>
     <import resource="spring-ibatis.xml" />
     <import resource="spring-dao.xml" />
 

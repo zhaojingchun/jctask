@@ -21,6 +21,7 @@ import java.util.List;
  */
 public class HttpClientUtil {
     private Logger log = Logger.getLogger(HttpClientUtil.class);
+    private String charSet="";
     public String  post (String url) {
         //创建httpclient实例
         CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -32,17 +33,16 @@ public class HttpClientUtil {
         List<NameValuePair> formparams = new ArrayList<NameValuePair>();
         formparams.add(new BasicNameValuePair("username", "admin"));
         formparams.add(new BasicNameValuePair("password", "123456"));
-
         UrlEncodedFormEntity uefEntity;
         log.debug("executing request " + httpPost.getURI());
         CloseableHttpResponse response = null;
         try {
             response = httpClient.execute(httpPost);
-            uefEntity = new UrlEncodedFormEntity(formparams, "UTF-8");
+            uefEntity = new UrlEncodedFormEntity(formparams, charSet);
             httpPost.setEntity(uefEntity);
             HttpEntity entity = response.getEntity();
             if (entity != null) {
-                String str = EntityUtils.toString(entity, "UTF-8");
+                String str = EntityUtils.toString(entity, charSet);
                 log.debug("--------------------------------------");
                 log.debug("Response content: " + str);
                 log.debug("--------------------------------------");
@@ -80,9 +80,6 @@ public class HttpClientUtil {
             HttpEntity entity = response.getEntity();
             if (entity != null) {
                 byte[] bytes = EntityUtils.toByteArray(entity);
-                log.debug("--------------------------------------");
-//                log.debug("Response content: " + bytes);
-                log.debug("--------------------------------------");
                 return bytes;
             }
         } catch (Exception e) {
@@ -103,5 +100,11 @@ public class HttpClientUtil {
         return null;
     }
 
+    public String getCharSet() {
+        return charSet;
+    }
 
+    public void setCharSet(String charSet) {
+        this.charSet = charSet;
+    }
 }

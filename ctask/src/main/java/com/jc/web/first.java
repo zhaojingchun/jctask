@@ -25,6 +25,8 @@ public class first  extends ActionSupport{
 
     private FirstDao firstDao;
 
+    private long id ;
+
     public String execute() throws Exception {
         javax.servlet.ServletContext ServletContext = ServletActionContext.getServletContext();
         WebApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(ServletContext);
@@ -49,6 +51,18 @@ public class first  extends ActionSupport{
         return "index";
     }
 
+    public String dao(){
+        try{
+            Map<String ,Object> param = new HashMap<String,Object>();
+            param.put("id",id) ;
+            Team team = firstDao.getTeamByid(param);
+            System.out.print(team.toString());
+        }catch (Exception e){
+            Logger.getLogger("test1.test2").error(e.getMessage(),e);
+        }
+        return "index";
+    }
+
     public FitstServiceImpl getFitstService() {
         return fitstService;
     }
@@ -63,5 +77,13 @@ public class first  extends ActionSupport{
 
     public void setFirstDao(FirstDao firstDao) {
         this.firstDao = firstDao;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

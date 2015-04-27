@@ -131,6 +131,12 @@
   </dependencies>
   <build>
     <finalName>ctask</finalName>
+      <resources>
+          <resource>
+              <directory>src/main/resources</directory>
+              <filtering>true</filtering>
+          </resource>
+      </resources>
       <plugins>
           <plugin>
               <groupId>org.apache.maven.plugins</groupId>
@@ -141,18 +147,37 @@
                   <encoding>utf-8</encoding>
               </configuration>
           </plugin>
+          <plugin>
+              <artifactId>maven-resources-plugin</artifactId>
+              <version>2.2</version>
+              <configuration>
+                  <encoding>utf-8</encoding>
+              </configuration>
+          </plugin>
       </plugins>
   </build>
   <profiles>
     <profile>
         <!-- 测试环境的profile -->
-        <id>tuan-development</id>
+        <id>development</id>
         <properties>
-            <tuan.read.jdbc.driver>com.mysql.jdbc.Driver</tuan.read.jdbc.driver>
-            <tuan.read.jdbc.url>jdbc:mysql://xxx/xxx?autoReconnect=true<![CDATA[&amp;]]>useUnicode=true<![CDATA[&amp;]]>characterEncoding=utf8</tuan.read.jdbc.url>
-            <tuan.read.jdbc.username>xxxxx</tuan.read.jdbc.username>
-            <tuan.read.jdbc.password>xxxxx</tuan.read.jdbc.password>
+            <cjtask.read.jdbc.driver>com.mysql.jdbc.Driver</cjtask.read.jdbc.driver>
+            <cjtask.read.jdbc.url>jdbc:mysql://192.168.166.30:3359/tuan</cjtask.read.jdbc.url>
+            <cjtask.read.jdbc.username>tuan_cs</cjtask.read.jdbc.username>
+            <cjtask.read.jdbc.password>123456</cjtask.read.jdbc.password>
+            <com.jc.cjtask.httpClientUtil.charSet>utf-8</com.jc.cjtask.httpClientUtil.charSet>
         </properties>
     </profile>
+      <profile>
+          <!-- 测试环境的profile -->
+          <id>production</id>
+          <properties>
+              <cjtask.read.jdbc.driver>com.mysql.jdbc.Driver</cjtask.read.jdbc.driver>
+              <cjtask.read.jdbc.url>jdbc:mysql://10.0.16.16:4066/zy52078580_mysql_459k7t4z</cjtask.read.jdbc.url>
+              <cjtask.read.jdbc.username>71f11TWt</cjtask.read.jdbc.username>
+              <cjtask.read.jdbc.password>S157h78a3378</cjtask.read.jdbc.password>
+              <com.jc.cjtask.httpClientUtil.charSet>utf-8</com.jc.cjtask.httpClientUtil.charSet>
+          </properties>
+      </profile>
   </profiles>
 </project>

@@ -3,10 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-        <!--<property name="driverClassName" value ="${tuan.read.jdbc.driver}"/>-->
-        <!--<property name="url"  value ="${tuan.read.jdbc.url}"/>-->
-        <!--<property name="username" value ="${jtuan.read.jdbc.username}"/>-->
-        <!--<property name="password" value ="${tuan.read.jdbc.password}"/>-->
+        <property name="driverClassName" value ="${cjtask.read.jdbc.driver}"/>
+        <property name="url"  value ="${cjtask.read.jdbc.url}"/>
+        <property name="username" value ="${cjtask.read.jdbc.username}"/>
+        <property name="password" value ="${cjtask.read.jdbc.password}"/>
         <!--<property name="driverClassName" value ="com.mysql.jdbc.Driver"/>-->
         <!--<property name="url"  value ="jdbc:mysql://10.0.16.16:4066/zy52078580_mysql_459k7t4z" />-->
         <!--<property name="username" value ="71f11TWt"/>-->

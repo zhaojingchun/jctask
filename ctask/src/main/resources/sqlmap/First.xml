@@ -6,9 +6,9 @@
         <result property="id" 						column="id"/>
         <result property="userId" 					column="user_id"/>
     </resultMap>
-    <select id ="getTeamById" parameterClass="long" resultMap="teamsResult">
+    <select id ="getTeamById" parameterClass="map" resultMap="teamsResult">
         select t.id,t.user_id
         from team t
-        where id = 999
+        where id = #id#
     </select>
 </sqlMap>
