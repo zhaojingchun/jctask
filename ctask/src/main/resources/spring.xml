@@ -14,14 +14,8 @@
     </bean>
     <!-- 引入属性文件,config.properties位于src/main/resources目录下 -->
     <!--<context:property-placeholder location="classpath:config.properties" />-->
-
-    <!--<bean id="fitstService" class="com.jc.service.FitstServiceImpl">-->
-    <!--</bean>-->
-    <!--<bean id="httpClientUtil" class="com.jc.common.HttpClientUtil"/>-->
     <bean id="charSet" class="java.lang.String">
         <constructor-arg index="0" value="${com.jc.cjtask.httpClientUtil.charSet}"/>
     </bean>
     <import resource="spring-ibatis.xml" />
-    <import resource="spring-dao.xml" />
-
 </beans>

@@ -12,7 +12,6 @@ import java.util.Map;
  * Time: 下午6:52
  * To change this template use File | Settings | File Templates.
  */
-@Repository
 public interface FirstDao {
     public Team getTeamByid(Map map);
 }

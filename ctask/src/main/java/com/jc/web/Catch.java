@@ -30,7 +30,6 @@ public class Catch  extends ActionSupport {
         }catch (Exception e){
             log.error(e.getMessage(),e);
         }
-
     }
 
     public void catchFile(){
@@ -81,11 +80,7 @@ public class Catch  extends ActionSupport {
         }catch (Exception e){
 
         }
-
-//        catch
     }
-
-
 
     public String getCatchUrl() {
         return catchUrl;
