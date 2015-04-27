@@ -11,6 +11,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -23,6 +24,7 @@ import java.util.List;
 @Component
 public class HttpClientUtil {
     private Logger log = Logger.getLogger(HttpClientUtil.class);
+    @Autowired
     private String charSet="";
     public String  post (String url) {
         //创建httpclient实例
