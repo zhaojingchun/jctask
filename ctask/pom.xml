@@ -133,6 +133,12 @@
           <artifactId>httpclient</artifactId>
           <version>4.3</version>
       </dependency>
+      <!--quartz-->
+      <dependency>
+          <groupId>org.quartz-scheduler</groupId>
+          <artifactId>quartz</artifactId>
+          <version>2.2.1</version>
+      </dependency>
   </dependencies>
   <build>
     <finalName>ctask</finalName>
