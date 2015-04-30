@@ -17,5 +17,9 @@
     <bean id="charSet" class="java.lang.String">
         <constructor-arg index="0" value="${com.jc.cjtask.httpClientUtil.charSet}"/>
     </bean>
+    <bean id="delPath" class="java.lang.String">
+        <constructor-arg index="0" value="${com.jc.cjtask.delPath}"/>
+    </bean>
+    <import resource="spring-time-task.xml" />
     <import resource="spring-ibatis.xml" />
 </beans>

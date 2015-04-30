@@ -3,9 +3,7 @@ package com.jc.dao.impl;
 import com.jc.dao.BaseDao;
 import com.jc.dao.FirstDao;
 import com.jc.domain.Team;
-import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import java.util.Map;
 

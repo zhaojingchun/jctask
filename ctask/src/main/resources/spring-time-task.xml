@@ -2,5 +2,36 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <bean id="deltePathFilesQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+              <property name="targetObject" ref="delUnderPathFiles" />
+              <property name="targetMethod" value="delAllPathFiles" />
+              <property name="concurrent" value="false" />
+              <!--监听-->
+              <!--<property name="jobListenerNames">-->
+                     <!--<list>-->
+                            <!--<value>jobListener</value>-->
+                     <!--</list>-->
+              <!--</property>-->
+       </bean>
+       <bean id="deltePathFilesTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+              <property name="jobDetail" ref="deltePathFilesQuartz" />
+              <property name="cronExpression" value="${com.jd.deltePathFilesTrigger.cronExpression}" />
+       </bean>
+       <bean id="syncSellOrderScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+              <property name="triggers">
+                     <list>
+                            <ref bean="deltePathFilesTrigger" />
+                     </list>
+              </property>
+              <property name="autoStartup">
+                     <value>true</value>
+              </property>
+              <!--监听-->
+              <!--<property name="jobListeners">-->
+                     <!--<list>-->
+                            <!--<ref bean="jobListener"/>-->
+                     <!--</list>-->
+              <!--</property>-->
+       </bean>
 
 </beans>
