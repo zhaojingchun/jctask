@@ -8,7 +8,7 @@
     <constant name="struts.objectFactory.spring.autoWire " value="name" />
     <!--<constant name="struts.i18n.encoding" value="utf-8" />-->
     <package name="test" namespace="/test" extends="struts-default">
-        <action name="*" class="com.jc.web.first" method="{1}">
+        <action name="*" class="com.jc.web.First" method="{1}">
             <result name="index">/WEB-INF/jsp/index.jsp</result>
         </action>
     </package>
