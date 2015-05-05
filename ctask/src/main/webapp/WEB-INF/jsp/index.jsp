@@ -12,14 +12,32 @@
 <div id = "catchPage">
 
 </div>
-<form method="post" action="/upload/uploadOneFile.action" enctype="multipart/form-data">
-    上传文件1<input type="file" name="upload"/><br>
-    <input type="submit" value="提交"/>
+<%--<form method="post" action="/upload/uploadImage.action" enctype="multipart/form-data">--%>
+    上传文件1<input type="file" name="upload" id="upload"/><input type="button" value="上传" onclick="uploadImage();"/>
+    <%--<input type="submit" value="提交"/>--%>
 
 
 </form>
 <script type="text/javascript" src="/common/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/common/js/ajaxfileupload.js"></script>
 <script type="text/javascript">
+    function  uploadImage(){
+        jQuery.ajaxFileUpload(
+                {
+                    url: '/upload/uploadImage.action', // 需要链接到服务器地址
+                    secureuri: false,
+                    fileElementId: 'upload', // 文件选择框的id属性
+                    dataType: 'json', // 服务器返回的格式，可以是json
+                    success: function (data, status)
+                    {
+                        alert(data.status)
+                    },
+                    error: function (data, status, e)
+                    {
+                       alert(data.status)
+                    }
+                });
+    }
     $(function(){
         $("#cmtButton").bind("click",function(){
             var data = {"catchUrl":$("#catchUrl").val()} ;
