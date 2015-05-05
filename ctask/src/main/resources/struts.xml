@@ -13,4 +13,8 @@
         </action>
     </package>
     <include file="struts/catch.xml" />
+
+    <include file="struts/upload-file.xml" />
+
+
 </struts>
