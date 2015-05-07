@@ -8,8 +8,8 @@ import java.io.*;
 /**
  * Created by jingchun on 2015/4/25.
  */
-public class FileUtils {
-    private static final Logger log = Logger.getLogger(FileUtils.class);
+public class MyFileUtils {
+    private static final Logger log = Logger.getLogger(MyFileUtils.class);
     public static void create(String pathStr,String fileName,String fileStr){
         File path = new File(pathStr);
         if(!path.exists()){
@@ -65,5 +65,32 @@ public class FileUtils {
 
         }
 
+    }
+
+    /**
+     * 创建文件或目录
+     * @param path
+     * @return
+     */
+    public static boolean creatFile(String path){
+        File file = new File(path);
+        if(file.isDirectory()&&(file.exists()==false)){
+            file.mkdirs();
+            return true;
+        }else {
+            File pf = file.getParentFile() ;
+            if(pf!=null && (pf.exists()==false)){
+                pf.mkdirs();
+                try {
+                    file.createNewFile();
+                    return true;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    return false;
+                }
+            }
+
+
+        }
     }
 }

@@ -1,5 +1,7 @@
 package com.jc.web.upload;
 
+import com.jc.common.ImageCompressUtil;
+import com.jc.common.MyFileUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
@@ -42,6 +44,19 @@ public class FileUploadAction  extends ActionSupport {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        jsonMap.put("status","sucess");
+        return "jsonRes";
+    }
+
+    public String uploadZipImage(){
+        String path = ServletActionContext.getServletContext().getRealPath("/images");
+        String format = new StringBuffer("%s").append(File.separator).append("%s").append(File.separator).append("%s").toString();
+        String bigPath = String.format(format,path,"big",uploadFileName);
+        String minPath = String.format(format,path,"min",uploadFileName);
+        MyFileUtils.creatFile(bigPath);
+        MyFileUtils.creatFile(minPath);
+        ImageCompressUtil.zipImageFile(upload,460,297,1f,bigPath);
+        ImageCompressUtil.zipImageFile(upload,160,97,1f,minPath);
         jsonMap.put("status","sucess");
         return "jsonRes";
     }

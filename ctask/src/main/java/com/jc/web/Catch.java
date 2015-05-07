@@ -1,7 +1,7 @@
 package com.jc.web;
 
-import com.jc.common.FileUtils;
 import com.jc.common.HttpClientUtil;
+import com.jc.common.MyFileUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -49,7 +49,7 @@ public class Catch  extends ActionSupport {
         String fileName = "catch"+(int)(Math.random()*1000)+".html";
         ServletContext sc =  ServletActionContext.getServletContext();
         String path = sc.getRealPath("/");
-        FileUtils.create(path + File.separator + "html", fileName, fileStr);
+        MyFileUtils.create(path + File.separator + "html", fileName, fileStr);
         return fileName;
     }
 
@@ -58,7 +58,7 @@ public class Catch  extends ActionSupport {
         String fileName = getFileName(catchUrl);
         ServletContext sc =  ServletActionContext.getServletContext();
         String path = sc.getRealPath("/");
-        FileUtils.create(path + File.separator + "html", fileName, bytes);
+        MyFileUtils.create(path + File.separator + "html", fileName, bytes);
         log.info("Catch.createFile 耗时 : "+(System.currentTimeMillis()-t)+" ms");
         return fileName;
     }

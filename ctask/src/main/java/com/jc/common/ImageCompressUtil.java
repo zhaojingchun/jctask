@@ -137,8 +137,53 @@ public class ImageCompressUtil {
         deskImage.close();
     }
 
+    /**
+     * 压缩上传
+     * @param oldFile 上传文件
+     * @param width   压缩后宽度
+     * @param height  压缩后高度
+     * @param quality 压缩质量
+     * @param newImage 压缩后文件路径
+     * @return
+     */
+    public static String zipImageFile(File oldFile, int width, int height,
+                                      float quality, String newImage) {
+        if (oldFile == null ||!oldFile.exists() ) {
+            return null;
+        }
+        try {
+            /**对服务器上的临时文件进行处理 */
+            Image srcFile = ImageIO.read(oldFile);
+            /** 宽,高设定 */
+            BufferedImage tag = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+            tag.getGraphics().drawImage(srcFile, 0, 0, width, height, null);
+            /** 压缩之后临时存放位置 */
+            FileOutputStream out = new FileOutputStream(newImage);
+            JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
+            JPEGEncodeParam jep = JPEGCodec.getDefaultJPEGEncodeParam(tag);
+            /** 压缩质量 */
+            jep.setQuality(quality, true);
+            encoder.encode(tag, jep);
+            out.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return newImage;
+    }
+
     public static void main(String args[]) throws Exception {
-        ImageCompressUtil.zipImageFile("d:/22.jpg", 440, 293, 1f, "x2");
+        File file = new File("d:\\hahahaha\\aa");
+        if(!file.exists()){
+            File pf = file.getParentFile() ;
+            if(!pf.exists()){
+                pf.mkdirs();
+            }
+            file.createNewFile();
+        }
+//        File file1 = new File("D:"+File.separator+"22.jpg");
+//        ImageCompressUtil.zipImageFile(file1, 440, 293, 1f, "D:\\22x.jpg");
 //        ImageCompressUtil.saveMinPhoto("f:/食尸鬼 - 藿香.jpg", "f:/11.jpg", 139, 0.9d);
     }
 }

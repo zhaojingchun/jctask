@@ -12,8 +12,10 @@
 <div id = "catchPage">
 
 </div>
-<%--<form method="post" action="/upload/uploadImage.action" enctype="multipart/form-data">--%>
-    上传文件1<input type="file" name="upload" id="upload"/><input type="button" value="上传" onclick="uploadImage();"/>
+<form method="post" action="/upload/uploadImage.action" enctype="multipart/form-data">
+    <%--上传文件1<input type="file" name="upload" id="upload"/><input type="button" value="上传" onclick="uploadImage();"/>--%>
+
+上传文件1<input type="file" name="upload" id="upload"/><input type="button" value="上传" onclick="uploadZipImage();"/>
     <%--<input type="submit" value="提交"/>--%>
 
 
@@ -21,10 +23,16 @@
 <script type="text/javascript" src="/common/js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="/common/js/ajaxfileupload.js"></script>
 <script type="text/javascript">
-    function  uploadImage(){
+    function uploadNormalImage(){
+        uploadImage('/upload/uploadImage.action');
+    }
+    function uploadZipImage(){
+        uploadImage('/upload/uploadZipImage.action');
+    }
+    function  uploadImage(url){
         jQuery.ajaxFileUpload(
                 {
-                    url: '/upload/uploadImage.action', // 需要链接到服务器地址
+                    url:url , // 需要链接到服务器地址
                     secureuri: false,
                     fileElementId: 'upload', // 文件选择框的id属性
                     dataType: 'json', // 服务器返回的格式，可以是json
