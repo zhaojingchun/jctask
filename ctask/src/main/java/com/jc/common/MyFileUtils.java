@@ -89,8 +89,7 @@ public class MyFileUtils {
                     return false;
                 }
             }
-
-
         }
+        return true;
     }
 }
