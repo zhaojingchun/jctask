@@ -21,8 +21,14 @@ public class JcApplicationContext implements ServletContextAware {
     public void setServletContext(ServletContext servletContext) {
         this.servletContext=servletContext;
     }
+
+    public ServletContext getServletContext() {
+        return servletContext;
+    }
+
     public String getRootPath() {
         return servletContext.getRealPath("/");
     }
+
 
 }

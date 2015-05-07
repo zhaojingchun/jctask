@@ -2,16 +2,25 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <bean id="autoStartUpMap" class="org.springframework.beans.factory.config.MapFactoryBean">
+              <property name="sourceMap">
+                     <map>
+                            <entry key="${com.jd.stratUp.ip1}" value="syncSellOrderScheduler"/>
+                     </map>
+              </property>
+       </bean>
+       <bean id="jobListener" class="com.jc.JobListener"/>
+
        <bean id="deltePathFilesQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
               <property name="targetObject" ref="delUnderPathFiles" />
               <property name="targetMethod" value="delAllPathFiles" />
               <property name="concurrent" value="false" />
               <!--监听-->
-              <!--<property name="jobListenerNames">-->
-                     <!--<list>-->
-                            <!--<value>jobListener</value>-->
-                     <!--</list>-->
-              <!--</property>-->
+              <property name="jobListenerNames">
+                     <list>
+                            <value>jobListener</value>
+                     </list>
+              </property>
        </bean>
        <bean id="deltePathFilesTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
               <property name="jobDetail" ref="deltePathFilesQuartz" />
@@ -24,14 +33,14 @@
                      </list>
               </property>
               <property name="autoStartup">
-                     <value>true</value>
+                     <value>false</value>
               </property>
               <!--监听-->
-              <!--<property name="jobListeners">-->
-                     <!--<list>-->
-                            <!--<ref bean="jobListener"/>-->
-                     <!--</list>-->
-              <!--</property>-->
+              <property name="jobListeners">
+                     <list>
+                            <ref bean="jobListener"/>
+                     </list>
+              </property>
        </bean>
 
 </beans>

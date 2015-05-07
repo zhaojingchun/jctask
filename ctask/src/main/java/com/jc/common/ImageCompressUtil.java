@@ -173,17 +173,4 @@ public class ImageCompressUtil {
         return newImage;
     }
 
-    public static void main(String args[]) throws Exception {
-        File file = new File("d:\\hahahaha\\aa");
-        if(!file.exists()){
-            File pf = file.getParentFile() ;
-            if(!pf.exists()){
-                pf.mkdirs();
-            }
-            file.createNewFile();
-        }
-//        File file1 = new File("D:"+File.separator+"22.jpg");
-//        ImageCompressUtil.zipImageFile(file1, 440, 293, 1f, "D:\\22x.jpg");
-//        ImageCompressUtil.saveMinPhoto("f:/食尸鬼 - 藿香.jpg", "f:/11.jpg", 139, 0.9d);
-    }
 }

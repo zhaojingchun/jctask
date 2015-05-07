@@ -209,6 +209,7 @@
                 <!--=================== task cronExpression 开始 ===================-->
                 <com.jd.deltePathFilesTrigger.cronExpression>0 * * * * ?</com.jd.deltePathFilesTrigger.cronExpression>
                 <!--=================== task cronExpression 结束 ===================-->
+                <com.jd.stratUp.ip1>192.168.35.105</com.jd.stratUp.ip1>
             </properties>
         </profile>
         <profile>
@@ -224,6 +225,7 @@
                 <!--=================== task cronExpression 开始 ===================-->
                 <com.jd.deltePathFilesTrigger.cronExpression>html</com.jd.deltePathFilesTrigger.cronExpression>
                 <!--=================== task cronExpression 结束 ===================-->
+                <com.jd.stratUp.ip1>192.168.35.105</com.jd.stratUp.ip1>
             </properties>
         </profile>
     </profiles>

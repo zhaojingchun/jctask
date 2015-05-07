@@ -4,6 +4,7 @@
     <head>
     </head>
 <body>
+<a href="/task/task.action" >task</a>
 <input type="text" value="请输入需要抓取的url" id="catchUrl" /><input type="button" id="cmtButton" value="抓取"/>
 <br><hr>
 <input type="text" value="请输入需要抓取文件url" id="catchFileUrl" /><input type="button" id="cmtFileButton" value="抓取"/>
