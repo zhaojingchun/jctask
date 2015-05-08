@@ -5,11 +5,11 @@
        <bean id="autoStartUpMap" class="org.springframework.beans.factory.config.MapFactoryBean">
               <property name="sourceMap">
                      <map>
-                            <entry key="${com.jd.stratUp.ip1}" value="syncSellOrderScheduler"/>
+                            <entry key="${com.jd.stratUp.ip1}" value="deltePathFilesScheduler"/>
                      </map>
               </property>
        </bean>
-       <bean id="jobListener" class="com.jc.JobListener"/>
+       <bean id="jobListener" class="com.jc.service.listener.JobListener"/>
 
        <bean id="deltePathFilesQuartz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
               <property name="targetObject" ref="delUnderPathFiles" />
@@ -26,7 +26,7 @@
               <property name="jobDetail" ref="deltePathFilesQuartz" />
               <property name="cronExpression" value="${com.jd.deltePathFilesTrigger.cronExpression}" />
        </bean>
-       <bean id="syncSellOrderScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+       <bean id="deltePathFilesScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
               <property name="triggers">
                      <list>
                             <ref bean="deltePathFilesTrigger" />

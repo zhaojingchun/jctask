@@ -1,10 +1,9 @@
-package com.jc;
+package com.jc.service.listener;
 
-import com.jc.service.FitstServiceImpl;
+import com.jc.service.task.TaskService;
+import com.jc.service.task.impl.TaskServiceImpl;
 import org.apache.log4j.Logger;
-import org.apache.struts2.ServletActionContext;
 import org.quartz.Scheduler;
-import org.quartz.SchedulerException;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -21,21 +20,21 @@ import java.util.*;
  */
 public class TaskStartUpListener implements ServletContextListener {
     private static final Logger log = Logger.getLogger(TaskStartUpListener.class.getName());
+    private static final String serviceStr = "taskService";
     @Override
     public void contextInitialized(ServletContextEvent sc) {
         try {
             List<String> ipList = getHostAddress();
             WebApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(sc.getServletContext());
             Map<String,String> startUpMap = ctx.getBean("autoStartUpMap", Map.class);
+            TaskService taskService =ctx.getBean(serviceStr, TaskServiceImpl.class);;
+            ctx.getBean("autoStartUpMap", Map.class);
             Iterator<Map.Entry<String,String>> iterator = startUpMap.entrySet().iterator();
             while (iterator.hasNext()){
                 Map.Entry<String,String> entry = iterator.next();
                 String key = entry.getKey();
                 if(ipList.contains(key)){
-                    String[] value = entry.getValue().split(",");
-                    for(int i=0;i<value.length;i++){
-                        ctx.getBean(value[i],Scheduler.class).start();
-                    }
+                    taskService.schedulersStartUp(entry.getValue());
                 }
             }
         } catch (Exception e) {
@@ -49,6 +48,10 @@ public class TaskStartUpListener implements ServletContextListener {
 
     }
 
+    /**
+     * 获取本机ip list
+     * @return
+     */
     public List<String> getHostAddress(){
         List<String> list = new ArrayList<String>();
         try{
@@ -76,7 +79,7 @@ public class TaskStartUpListener implements ServletContextListener {
 
     public void getHostip() throws UnknownHostException {
         InetAddress addr =  InetAddress.getLocalHost();
-        String ip = addr.getLocalHost().getHostAddress().toString();
+        String ip = addr.getLocalHost().getHostAddress().toString(); //本机ip
         String address1 =addr.getHostName().toString();//获得本机名称
     }
 

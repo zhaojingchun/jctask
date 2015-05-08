@@ -55,11 +55,11 @@
     </listener>
     <!-- 字符编码过滤器 -->
     <listener>
-        <listener-class>com.jc.TaskStartUpListener</listener-class>
+        <listener-class>com.jc.service.listener.TaskStartUpListener</listener-class>
     </listener>
 
     <listener>
-        <listener-class>com.jc.JobListener</listener-class>
+        <listener-class>com.jc.service.listener.JobListener</listener-class>
     </listener>
 
 
