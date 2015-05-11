@@ -228,7 +228,7 @@
                 <com.jc.cjtask.httpClientUtil.charSet>utf-8</com.jc.cjtask.httpClientUtil.charSet>
                 <com.jc.cjtask.delPath>html</com.jc.cjtask.delPath>
                 <!--=================== task cronExpression 开始 ===================-->
-                <com.jd.deltePathFilesTrigger.cronExpression>html</com.jd.deltePathFilesTrigger.cronExpression>
+                <com.jd.deltePathFilesTrigger.cronExpression>0 * * * * ?</com.jd.deltePathFilesTrigger.cronExpression>
                 <!--=================== task cronExpression 结束 ===================-->
                 <com.jd.stratUp.ip1>192.168.35.105</com.jd.stratUp.ip1>
             </properties>
