@@ -10,7 +10,6 @@ import org.apache.struts2.ServletActionContext;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
-import java.util.regex.Pattern;
 
 /**
  * Created by jingchun on 2015/4/25.

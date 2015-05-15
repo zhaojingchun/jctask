@@ -8,8 +8,50 @@ package com.jc.model.factoty.factoinmethod;
  * To change this template use File | Settings | File Templates.
  */
 public class Client {
+    public static void main(String[] args){
+        Creator creator = new BlubCreator();
+        Light light = creator.factory();
+        light.trunOff();
+    }
 }
 
-class Creator{
-    public
+abstract class Creator{
+    abstract public Light factory();
+}
+
+class BlubCreator extends Creator{
+    @Override
+    public Light factory() {
+        return new BlubLight();
+    }
+}
+
+class TubeCreator extends Creator{
+    @Override
+    public Light factory() {
+        return new TubeLight();
+    }
+}
+
+abstract class Light{
+    abstract public void turnOn() ;
+    abstract public void trunOff();
+}
+
+class BlubLight extends Light{
+    public void turnOn(){
+         System.out.println("BlubLight on");
+    }
+    public void trunOff(){
+        System.out.println("BlubLight off");
+    }
+}
+
+class TubeLight extends Light{
+    public void turnOn(){
+        System.out.println("TubeLight on");
+    }
+    public void trunOff(){
+        System.out.println("TubeLight off");
+    }
 }

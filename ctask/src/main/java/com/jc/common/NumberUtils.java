@@ -22,6 +22,7 @@ public class NumberUtils {
                 e.printStackTrace();
             }
         }
-        return Math.abs(retNo)>defaultNo?retNo:defaultNo;
+        return  retNo;
+//        return Math.abs(retNo)>defaultNo?retNo:defaultNo;
     }
 }

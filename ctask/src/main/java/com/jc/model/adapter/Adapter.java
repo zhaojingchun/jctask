@@ -1,8 +1,8 @@
 package com.jc.model.adapter;
 
 /**
+ * 适配器说通俗点就是把一个东西包装一下变成另外一个东西
  * 对象适配器
- * Created with IntelliJ IDEA.
  * User: zhaojingchun
  * Date: 15-5-13
  * Time: 下午2:39
