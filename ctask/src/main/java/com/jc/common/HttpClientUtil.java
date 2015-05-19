@@ -86,7 +86,7 @@ public class HttpClientUtil {
         // 创建httppost
         HttpGet httpGet = new HttpGet(url);
         //放头部信息
-        httpGet.setHeader("Referer", "http://365.good7000.com/xz/cn/");
+        httpGet.setHeader("Referer", "");
         log.debug("executing request " + httpGet.getURI());
         CloseableHttpResponse response = null;
         try {
