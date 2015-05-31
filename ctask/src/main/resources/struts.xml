@@ -15,6 +15,5 @@
     <include file="struts/catch.xml" />
     <include file="struts/upload-file.xml" />
     <include file="struts/task.xml" />
-
-
+    <include file="struts/qrcode.xml" />
 </struts>
