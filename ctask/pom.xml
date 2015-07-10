@@ -178,6 +178,11 @@
           <artifactId>QRCode</artifactId>
           <version>3.0</version>
       </dependency>
+      <dependency>
+          <groupId>jackson-all</groupId>
+          <artifactId>jackson-all</artifactId>
+          <version>1.9.7</version>
+      </dependency>
   </dependencies>
   <build>
     <finalName>ctask</finalName>
