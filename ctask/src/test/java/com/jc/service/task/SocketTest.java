@@ -14,11 +14,14 @@ import java.net.UnknownHostException;
  */
 public class SocketTest {
     public static void main(String [] args){
-        catchBaidu();
+
+//        catchBaidu();
 //        urlTest();
-//        inetAdderss();
+        inetAdderss();
 
     }
+
+
 
     public static void catchBaidu(){
         try {

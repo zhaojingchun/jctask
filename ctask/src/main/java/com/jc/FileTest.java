@@ -19,7 +19,7 @@ public class FileTest {
     private static BufferedWriter bw = null;
     //每页大小
     private static final long pageSize = 100000;
-    //文件填充值
+    //文件填充值起始值
     private static int  fileNo = 0;
     //文件前缀
     private static final String filePreStr = "xiuyan";
@@ -29,6 +29,12 @@ public class FileTest {
     private static String encodeStr = "GBK" ;
     //文件头
     private static String headStr = "\"手机号码\",\"县区\",\"用户状态\",\"入网渠道编码\",\"实名制类型\",\"用户姓名\",\"证件类型\",\"证件号码\",\"地址\",\"超一证5号\"";
+    //区分关键字序号
+    private static final int keyNo = 1;
+    //区分关键字符串
+    private static final String keyStr = "\"岫岩县\"";
+    //分隔符
+    private static final String splitStr =",";
     public static void main(String[] args){
         try {
             readFile(readFilePath);
@@ -53,8 +59,8 @@ public class FileTest {
         long lineNo = 1;
         while ((line=br.readLine())!=null) {
             if(StringUtils.isEmpty(line))continue;
-            arrs=line.split(",");
-            if("\"岫岩县\"".equals(arrs[1])){
+            arrs=line.split(splitStr);
+            if(keyStr.equals(arrs[keyNo])){
                 if(lineNo%pageSize==0){
                     closeBufferedWriter(bw);
                     fileNo++ ;
