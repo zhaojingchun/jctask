@@ -222,15 +222,15 @@
             <id>development</id>
             <properties>
                 <cjtask.read.jdbc.driver>com.mysql.jdbc.Driver</cjtask.read.jdbc.driver>
-                <cjtask.read.jdbc.url>jdbc:mysql://192.168.166.30:3359/tuan</cjtask.read.jdbc.url>
-                <cjtask.read.jdbc.username>tuan_cs</cjtask.read.jdbc.username>
+                <cjtask.read.jdbc.url></cjtask.read.jdbc.url>
+                <cjtask.read.jdbc.username></cjtask.read.jdbc.username>
                 <cjtask.read.jdbc.password>123456</cjtask.read.jdbc.password>
                 <com.jc.cjtask.httpClientUtil.charSet>utf-8</com.jc.cjtask.httpClientUtil.charSet>
                 <com.jc.cjtask.delPath>html</com.jc.cjtask.delPath>
                 <!--=================== task cronExpression 开始 ===================-->
-                <com.jd.deltePathFilesTrigger.cronExpression>0 * * * * ?</com.jd.deltePathFilesTrigger.cronExpression>
+                <com.jc.deltePathFilesTrigger.cronExpression>0 * * * * ?</com.jc.deltePathFilesTrigger.cronExpression>
                 <!--=================== task cronExpression 结束 ===================-->
-                <com.jd.stratUp.ip1>192.168.35.105</com.jd.stratUp.ip1>
+                <com.jc.stratUp.ip1></com.jc.stratUp.ip1>
             </properties>
         </profile>
         <profile>
@@ -238,15 +238,15 @@
             <id>production</id>
             <properties>
                 <cjtask.read.jdbc.driver>com.mysql.jdbc.Driver</cjtask.read.jdbc.driver>
-                <cjtask.read.jdbc.url>jdbc:mysql://10.0.16.16:4066/zy52078580_mysql_459k7t4z</cjtask.read.jdbc.url>
-                <cjtask.read.jdbc.username>71f11TWt</cjtask.read.jdbc.username>
-                <cjtask.read.jdbc.password>S157h78a3378</cjtask.read.jdbc.password>
+                <cjtask.read.jdbc.url>j</cjtask.read.jdbc.url>
+                <cjtask.read.jdbc.username></cjtask.read.jdbc.username>
+                <cjtask.read.jdbc.password></cjtask.read.jdbc.password>
                 <com.jc.cjtask.httpClientUtil.charSet>utf-8</com.jc.cjtask.httpClientUtil.charSet>
                 <com.jc.cjtask.delPath>html</com.jc.cjtask.delPath>
                 <!--=================== task cronExpression 开始 ===================-->
-                <com.jd.deltePathFilesTrigger.cronExpression>0 * * * * ?</com.jd.deltePathFilesTrigger.cronExpression>
+                <com.jc.deltePathFilesTrigger.cronExpression>0 * * * * ?</com.jc.deltePathFilesTrigger.cronExpression>
                 <!--=================== task cronExpression 结束 ===================-->
-                <com.jd.stratUp.ip1>192.168.35.105</com.jd.stratUp.ip1>
+                <com.jc.stratUp.ip1></com.jc.stratUp.ip1>
             </properties>
         </profile>
     </profiles>

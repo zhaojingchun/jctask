@@ -21,7 +21,7 @@ public class QRcodeUtil {
         QRcodeUtil util = new QRcodeUtil();
         File upload = new File("D:\\22.jpg");
         ImageCompressUtil.zipImageFile(upload, 28, 28, 1f, "D:\\33.jpg");
-        createQRCode("http://www.jd.com", "D:\\first.png","D:\\33.jpg");
+        createQRCode("http://www.jc.com", "D:\\first.png","D:\\33.jpg");
 //        util.encoderQRCode("http://www.jd.com", "D:\\first.png");
 //        System.out.println(util.decoderQRCode("D:\\first.png"));
     }

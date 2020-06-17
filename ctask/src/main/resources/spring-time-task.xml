@@ -5,7 +5,7 @@
        <bean id="autoStartUpMap" class="org.springframework.beans.factory.config.MapFactoryBean">
               <property name="sourceMap">
                      <map>
-                            <entry key="${com.jd.stratUp.ip1}" value="deltePathFilesScheduler"/>
+                            <entry key="${com.c.stratUp.ip1}" value="deltePathFilesScheduler"/>
                      </map>
               </property>
        </bean>
